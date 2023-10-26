@@ -86,23 +86,6 @@ public class HashMap<Clave, Valor> {
     }
 
     /**
-     * Obtiene una lista de valores en el mapa.
-     *
-     * @return Una lista de valores en el mapa.
-     */
-    public ArrayList<Valor> obtenerValores() {
-        ArrayList<Valor> valores = new ArrayList<>();
-
-        for (LinkedList<Entrada<Clave, Valor>> compartimento : compartimentos) {
-            for (Entrada<Clave, Valor> entrada : compartimento) {
-                valores.add(entrada.obtenerValor());
-            }
-        }
-
-        return valores;
-    }
-
-    /**
      * Verifica si este mapa contiene una asociación para la clave especificada.
      *
      * @param clave La clave a verificar.

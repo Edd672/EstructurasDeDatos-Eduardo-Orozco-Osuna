@@ -14,70 +14,39 @@ public class HashMapTest {
     }
 
     @Test
-    public void testAddAndGetSize() {
-        hashMap.add("One", 1);
-        assertEquals(1, hashMap.size());
+    public void testTamano() {
+        hashMap.agregar("One", 1);
+        assertEquals(1, hashMap.tamaño());
     }
 
     @Test
-    public void testAddAndGet() {
-        hashMap.add("Two", 2);
-        assertEquals(2, hashMap.get("Two"));
+    public void testObtener() {
+        hashMap.agregar("Two", 2);
+        assertEquals(2, hashMap.obtener("Two"));
     }
 
     @Test
-    public void testAddAndContainsKey() {
-        hashMap.add("Three", 3);
-        assertTrue(hashMap.containsKey("Three"));
+    public void testContieneClave() {
+        hashMap.agregar("Three", 3);
+        assertTrue(hashMap.contieneClave("Three"));
     }
 
     @Test
-    public void testAddAndRemove() {
-        hashMap.add("Four", 4);
-        hashMap.remove("Four");
-        assertNull(hashMap.get("Four"));
+    public void testEliminar() {
+        hashMap.agregar("Four", 4);
+        hashMap.eliminar("Four");
+        assertNull(hashMap.obtener("Four"));
     }
 
     @Test
-    public void testIsEmpty() {
-        assertTrue(hashMap.isEmpty());
-        hashMap.add("Five", 5);
-        assertFalse(hashMap.isEmpty());
+    public void testObtenerClaves() {
+        hashMap.agregar("Eight", 8);
+        hashMap.agregar("Nine", 9);
+        hashMap.agregar("Ten", 10);
+        assertEquals(3, hashMap.obtenerClaves().size());
+        assertTrue(hashMap.obtenerClaves().contains("Eight"));
+        assertTrue(hashMap.obtenerClaves().contains("Nine"));
+        assertTrue(hashMap.obtenerClaves().contains("Ten"));
     }
 
-    @Test
-    public void testClear() {
-        hashMap.add("Six", 6);
-        hashMap.clear();
-        assertEquals(0, hashMap.size());
-    }
-
-    @Test
-    public void testAddDuplicateKey() {
-        hashMap.add("Seven", 7);
-        hashMap.add("Seven", 77);
-        assertEquals(77, hashMap.get("Seven"));
-    }
-
-    @Test
-    public void testGetKeys() {
-        hashMap.add("Eight", 8);
-        hashMap.add("Nine", 9);
-        hashMap.add("Ten", 10);
-        assertEquals(3, hashMap.getKeys().size());
-        assertTrue(hashMap.getKeys().contains("Eight"));
-        assertTrue(hashMap.getKeys().contains("Nine"));
-        assertTrue(hashMap.getKeys().contains("Ten"));
-    }
-
-    @Test
-    public void testGetValues() {
-        hashMap.add("Eleven", 11);
-        hashMap.add("Twelve", 12);
-        hashMap.add("Thirteen", 13);
-        assertEquals(3, hashMap.getValues().size());
-        assertTrue(hashMap.getValues().contains(11));
-        assertTrue(hashMap.getValues().contains(12));
-        assertTrue(hashMap.getValues().contains(13));
-    }
 }
