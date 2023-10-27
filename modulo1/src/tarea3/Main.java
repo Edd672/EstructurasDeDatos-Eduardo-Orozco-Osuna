@@ -9,6 +9,6 @@ import tarea3.utils.*;
 
 public class Main {
     public static void main(String[] args) {
-        CLI.launchApp();
+        CLI.iniciarApp();
     }
 }
